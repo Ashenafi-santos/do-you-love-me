@@ -107,7 +107,7 @@
 
 <body>
   <div class="container" id="main-container">
-    <h1>Do you love me?</h1>
+    <h1>Kiduye Do you love me?</h1>
     <button class="btn" id="yes-btn">Yes</button>
     <button class="btn" id="no-btn">No</button>
   </div>
@@ -117,29 +117,9 @@
 
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
-    let player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('yt-player', {
-        videoId: 'Cr5SdTuvTAU', // Replace with your YouTube video ID
-        playerVars: { 'autoplay': 0, 'controls': 0 },
-        events: {
-          'onReady': function (event) {
-            player.setVolume(30); // set volume (0 - 100)
-          }
-        }
-      });
-    }
-
     const yesBtn = document.getElementById('yes-btn');
     const noBtn = document.getElementById('no-btn');
     const container = document.getElementById('main-container');
-
-    // Add a hidden audio element for local mp3
-    let audio = document.createElement('audio');
-    audio.id = 'local-audio';
-    audio.src = '08_እማ_ዘንድ_ይደር_አምሳለ_ጦቢት_Theodros.mp3';
-    audio.style.display = 'none';
-    document.body.appendChild(audio);
 
     yesBtn.onclick = function () {
       container.innerHTML = `
@@ -205,8 +185,12 @@
 ድርሻዬ
         </div>
       `;
-      audio.currentTime = 0;
-      audio.play(); // plays the local mp3
+      let audio = document.createElement('audio');
+      audio.src = '08_እማ_ዘንድ_ይደር_አምሳለ_ጦቢት_Theodros.mp3';
+      audio.autoplay = true;
+      audio.style.display = 'none';
+      document.body.appendChild(audio);
+      audio.onended = function() { audio.remove(); };
     };
 
     noBtn.onclick = function () {
