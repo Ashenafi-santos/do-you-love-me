@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do You Love Me?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(255, 0, 100, 0.2);
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 900px;
+      width: 90%;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #e75480;
+      font-size: 2.5em;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #ff6a88 0%, #ff99ac 100%);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 12px 32px;
+      font-size: 1.2em;
+      margin: 12px;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #ff99ac 0%, #ff6a88 100%);
+    }
+
+    .poem {
+      margin-top: 24px;
+      font-size: 1.1em;
+      color: #d72660;
+      font-family: 'Pacifico', cursive;
+      background: rgba(255, 230, 240, 0.7);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: start;
+      white-space: pre-line;
+      word-break: break-word;
+      box-sizing: border-box;
+    }
+    .responsive-video{
+        width: 600px;
+        max-width: 100%;
+        height: auto;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 0;
+        min-height: 100vh;
+      }
+      .container {
+        padding: 20px 8px;
+        border-radius: 16px;
+        max-width: 100vw;
+      }
+      h1 {
+        font-size: 1.5em;
+        margin-bottom: 16px;
+      }
+      .btn {
+        padding: 10px 18px;
+        font-size: 1em;
+        margin: 8px;
+        border-radius: 14px;
+      }
+      .poem {
+        font-size: 1em;
+        padding: 12px;
+        border-radius: 10px;
+      }
+      .responsive-video {
+        width: 100vw;
+        max-width: 90vw !important;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="main-container">
+    <h1>Do you love me?</h1>
+    <button class="btn" id="yes-btn">Yes</button>
+    <button class="btn" id="no-btn">No</button>
+  </div>
+
+  <!-- Hidden YouTube player (audio only) -->
+  <div id="yt-player" style="width:0; height:0; overflow:hidden;"></div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-player', {
+        videoId: 'Cr5SdTuvTAU', // Replace with your YouTube video ID
+        playerVars: { 'autoplay': 0, 'controls': 0 },
+        events: {
+          'onReady': function (event) {
+            player.setVolume(30); // set volume (0 - 100)
+          }
+        }
+      });
+    }
+
+    const yesBtn = document.getElementById('yes-btn');
+    const noBtn = document.getElementById('no-btn');
+    const container = document.getElementById('main-container');
+
+    yesBtn.onclick = function () {
+      container.innerHTML = `
+        <h1>I love you too! ❤️</h1>
+        <div class="poem">ማ ዘንድ ይደር 
+
+[ማ ዘንድ ይደር ሄዶ ጎኔ ሰው አልሆንም ካላንቺ እኔ
+ማ ዘብ ኖሮ ለኔ ገላ ደግሞ አያለሁ ካንቺ ሌላ] 
+
+እ. ወ. ድ. ሻ. ለ. ሁ.…  ታውቂያለሽ? እወድሻለሁ ብዬሽ አልጠግብም። እወድሻለሁ ስልሽ እያንዳንዱ ቃል ውስጤ ድረስ ዘልቆ ይሰማኛል። እ. ወ. ድ. ሻ. ለ. ሁ. 
+
+ካንቺ ውጪ ሌላ ሴት ጋር መሄድ እችላለሁ?። ከሌላ ሴት ጋር መዋል፣ ማደር፣ መብላት፣ መሳቅ፣ መጫወት… እችል ይሆናል። ችግሩ ግን ከሌላ ሴት ጋር የእውነቴን አልስቅም፣ ከሌላ ሴት ጋር ጣፍጦኝ አልበላም፣ ከሌላ ሴት ጋር ስውል ደቂቃው ሰዓት፣ ሰዓቱ ደግሞ አንድ ቀን ይሆንብኛል፣ … እኔ አንቺን ብቻ ነው የምወደው። ካላንቺ ሰው መሆን አልችልበትም። 
+
+[ልምጣ ወይ ልቅር ምን ይሻለኛል
+ከፍቅርሽ 'ሚያስጥል
+ማን ዘንድ ይገኛል] 
+
+ሄጄ ለመቅረት ብዙ ጊዜ አስቤ አውቃለሁ። ስንጣላ ጊዜ። ግን አልቻልኩኝም። ፍቅር ማለት ፍቅር ይዞት የማያውቅ ሰው እንደሚያስበው ደስ የሚል ነገር ብቻ አይደለም። ህመም አለው… ሰላም ይነሳል። ሰላሜን ሳጣ ጠፍቼ ለመቅረት ያሰብኩበት ጊዜ ብዙ ነው። ከሄድኩ በኋላስ ብዬ ሳስብ ግን… አንዳች ጭንቀት መላ ሰውነቴን ይወረኛል። ካንቺ ፍቅር ርቄ ሌላ ፍቅር አላገኝም። 
+
+[የብራና ስዕል አይነ ጎላዬ
+መልከ ማክዳ ሳባ መሳዬ
+የሸማሽ ጥለት ቀልሞ ሰንደቄ
+ያስታውሰኛል ላንቺ መውደቄ] 
+
+ብታዪኮ ታምሪያለሽ። መልክሽ ያምራል፣ ቀልድሽ ያምራል፣ ቁምነገርሽ ያምራል፣ ኩርፊያሽ ያምራል፣ ለቅሶሽ ያምራል፣ ቁጣሽ ያምራል። በጣም ታምሪያለሽ። ፍቅር የያዘኝ ከሁሉም ነገርሽ ነው። ካንቺ አንድ ነገር ብቻ ወድጄ ቢሆን ኖሮ አብረን መሆን እንደማንችል በተሰማኝ ጊዜ…  ያ የወደድኩት ነገርሽ ያላት ሌላ ሴት ፈልጌ እሄድልሽ ነበር። ግልግል ነበር። ችግሩ ሁሉንም ነገርሽን ነው የምወደው። ትኩር ብዬ ሳይሽ ከሚገለጥልኝ ፉንጋነትሽም ጭምር ፍቅር ይዞኛል። 
+
+[ልቤ አምሮህ ሌላ ዝቅ አትበል ይቅር
+አገር ያህላል ከፍ ያለ ፍቅር] 
+
+አንቺም እ. ወ. ድ. ሃ. ለ. ሁ. ያልሽኝን በሙሉ እምኜሻለሁ። ሁል ጊዜ እወድሃለሁ ስትዪኝ እንደ አዲስ ብርቅ ይሆንብኛል። ፍቅራችን በጣም ትልቅ ነው። ራሴን ስመክረው… ሌላ ከዚህ የበለጠ ፍቅር አገኛለሁ ብለህ እንዳትለፋ… እለዋለሁ። አንድ ዕድል ነው የተሰጠህ እሷም ይቺ ልጅ ብቻ ነች እያልኩ ስላንቺ እነግረዋለሁ። ያምነኛል። 
+
+[ማ' ዘንግ ይዞ ገብቶ ገዳም
+ያገናኘው ፍቅርን ካ'ዳም
+ማ' ፆም ይዞ ቆጥሮ ጠጠር
+ባሳከለው ፍቅርን ሃገር] 
+
+ከእኔ እና ካንቺ ውጪ ማን ለዚህ ፍቅር መፀለይ፣ ማን መስዋዕትነት መክፈል እንዳለበት አላውቅም። የምንዋደደው እኔ እና አንቺ አይደለን? የምናተርፈውም የምንከስረውም እኛው ነን ስለ ወደፊቱ አላውቅም። 
+
+[ሰው አሳዝኖ ሰው ላይሆን ነገር
+ምን አስጀመረዉ የማይሆን ነገር
+ልቤ አንቺን ትቶ ከማን ዘንድ ይደር
+ልማልልሽ ወይ በ 'ቶ' መስቀሌ
+ከራሴ ጋር ነው ብጣላሽ ጥሌ] 
+
+የተጣላን ቀን ብዙ ነገር አላስብም። አንቺን ብቻ እንጂ። ካንቺ ጋር ስጣላ፣ ከሃሳቤ ጋር፣ ከሰላሜ ጋር፣ ከህይወቴ ጋር፣ ከመኖሬ ጋር፣ ከራሴ ጋር ነው የምጣለው። አንዳንዴ ያበድኩኝም ይመስለኛል። ጨርሶ ብንለያይ ጨርቄን ጥዬ ከእኔ ቤት አንቺ ቤት፣ ከአንቺ ቤት እኔ ቤት ዝም ብዬ የምመላለስ ይመስለኛል። 
+
+[ድር አስተርታሪ ጥልፍ የጠለፈው
+አስዋብኩሽ ብሎ ምን አስጎበረው
+ሸማ ተጊጦ ቀለም ቢነከር
+ልብስ አያምርበት ያ'ራቁት ሃገር] 
+
+አብረን ለመኖር የግዴታ መዋደድ አለብን። በደንብ እንደምንዋደድ አውቃለሁ። እኩል በሚመስል የፍቅር ደረጃ። በእርገጥ የተዋደደ ሁሉ አብሮ መኖር ይችላል ማለትም አይደለም። እንደዛ ቢሆን ኖሮ እኔ ላንቺ ያለኝ ፍቅር ለሁለታችንም ይተርፈን ነበር፤ የሁለታችን ፍቅር ደግሞ ለሃገር… ግን እኔ እና አንቺን ፍቅራችን አላዳነንም። 
+
+[ልምጣ ወይ ልቅር አጣሁ መንገድ
+እግሬ እንዴት ይጥፋው ቆርጦ መሄድ
+ሰው ሲወጣ ሰው ሲወርድ
+እንዲህ አይደለም ወይ መራመድ
+ይህ አይደለም ወይ መራመድ] 
+
+ወደ ሁሉም አቅጣጫ ብሄድም መንገዱ ሁሉ ወዳንቺ መልሶ ያመጣኛል። በቃ ሄጄ መቅረት አልቻልኩበትም። ሄደሽ መቅረት አልሆነልሽም።ግን የእኔ እና ያንቺም ፍቅር ቆንጆ ጊዜ ይመጣለታል ብዬም አምናለሁ! 
+
+አለዛ'ማ ዘንድ አድራለሁ?
+ድርሻዬ
+        </div>
+      `;
+      player.playVideo(); // plays only the audio (video is hidden)
+    };
+
+    noBtn.onclick = function () {
+      container.innerHTML = `
+        <div class="video-container">
+          <video id="no-video" class="responsive-video" controls autoplay>
+            <source src="video_2025-09-06_05-36-21.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      `;
+      setTimeout(() => {
+        const video = document.getElementById('no-video');
+        if (video) {
+          video.onended = function () {
+            container.innerHTML = `
+              <h1 style='color:#e75480;font-family:Pacifico,cursive;'>Kidding, I'll wait for you forever ❤️</h1>
+            `;
+          };
+        }
+      }, 500);
+    };
+  </script>
+</body>
+</html>
