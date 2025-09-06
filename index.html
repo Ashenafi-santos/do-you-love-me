@@ -134,6 +134,13 @@
     const noBtn = document.getElementById('no-btn');
     const container = document.getElementById('main-container');
 
+    // Add a hidden audio element for local mp3
+    let audio = document.createElement('audio');
+    audio.id = 'local-audio';
+    audio.src = '08_እማ_ዘንድ_ይደር_አምሳለ_ጦቢት_Theodros.mp3';
+    audio.style.display = 'none';
+    document.body.appendChild(audio);
+
     yesBtn.onclick = function () {
       container.innerHTML = `
         <h1>I love you too! ❤️</h1>
@@ -198,7 +205,8 @@
 ድርሻዬ
         </div>
       `;
-      player.playVideo(); // plays only the audio (video is hidden)
+      audio.currentTime = 0;
+      audio.play(); // plays the local mp3
     };
 
     noBtn.onclick = function () {
